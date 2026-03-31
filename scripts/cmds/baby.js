@@ -5,9 +5,9 @@ const baseApiUrl = async () => {
 
 module.exports.config = {
     name: "baby",
-    aliases: ["simma", "bby", "tanu", "mira"],
+    aliases: ["baby", "bbe", "babe"," bot chan"],
     version: "6.9.0",
-    author: "dipto",
+    author: "dipto edit by MAMUN ",
     countDown: 0,
     role: 0,
     description: "better then all sim simi",
@@ -30,7 +30,7 @@ module.exports.onStart = async ({
 
     try {
         if (!args[0]) {
-            const ran = ["𝑩𝒐𝒍𝒐 𝑩𝒂𝒃𝒚 😛", "𝑻𝒂𝒌𝒂 𝑫𝒆𝒉 😐", "𝘼𝙩𝙤 𝙙𝙖𝙠𝙞𝙨 𝙠𝙚𝙣𝙤...😒", "𝑼𝒎𝒎 𝑩𝒂𝒃𝒚 𝒃𝒐𝒍𝒐 𝒈𝒐 👀🎀"];
+            const ran = ["Bolo baby", "hum", "type help baby", "type #baby hi"];
             return api.sendMessage(ran[Math.floor(Math.random() * ran.length)], event.threadID, event.messageID);
         }
 
@@ -163,9 +163,54 @@ module.exports.onChat = async ({
         const body = event.body ? event.body?.toLowerCase() : ""
         if (body.startsWith("baby") || body.startsWith("bby") || body.startsWith("bot") || body.startsWith("jan") || body.startsWith("babu") || body.startsWith("janu")) {
             const arr = body.replace(/^\S+\s*/, "")
-            const randomReplies = ["tomar oikhane ummha 😗🌝", "assalamualaikum", "What's up?", "ki bolba blo 🙃"];
+            const randomReplies = ["😚", "Yes 😀, I am here", "What's up?", "Bolo jaan ki korte panmr jonno","ʜᴇʏ ʙᴀʙʏ 😘 ᴋᴏᴛʜᴀʏ ᴄʜɪʟᴀ?",
+    "ʙᴀʙʏ, ᴀᴍɪ ᴛᴏᴍᴀʀ ᴏᴘᴇᴋʜʏᴀʏ ᴄʜɪʟᴀᴍ 💖",
+    "ᴋɪ ᴋᴏʀᴛᴇᴄʜᴏ ʙᴀʙʏ? 😍",
+    "ᴍɪꜱꜱ ᴋᴏʀᴇᴄʜᴏ ᴀᴍᴀᴋᴇ? 🥰",
+    "ʏᴇꜱ ʙᴀʙʏ, ᴀᴍɪ ʟɪꜱᴛᴇɴɪɴɢ 👂",
+    "ʙᴀʙʏʏʏ~ ᴛᴜᴍɪ ᴀᴍᴀᴋᴇ ᴄᴀʟʟ ᴋᴏʀᴇᴄʜᴏ? 💌",
+    "ᴏᴡᴡ ʙᴀʙʏ, ᴛᴜᴍɪ ᴏɴᴇᴋ ᴄᴜᴛᴇ 💕",
+    "ʜᴇʏ ʟᴏᴠᴇʀʙᴏʏ/ʟᴏᴠᴇʀɢɪʀʟ 💞",
+    "ᴋɪ ᴅᴏᴋᴛᴇ ʙᴀʙʏ~ ᴀᴍɪ ᴀᴄʜɪ 💗",
+    "ʙᴀʙʏ, ᴛᴜᴍɪ ᴀᴍᴀʀ ꜱᴘᴇᴄɪᴀʟ ❤️",
+    "ʙᴀʙʏ, ᴛᴜᴍɪ ᴄᴀʟʟ ᴋᴏʀʟᴇ ᴀᴍɪ ʀᴜɴ ᴋᴏʀᴇ ᴀꜱʜɪ 😚",
+    "ᴀᴍᴀʀ ꜱʜᴏɴᴀ ʙᴀʙʏ ᴋᴏᴛʜᴀʏ ᴄʜɪʟᴏ 💖",
+    "ʙᴀʙʏ, ᴛᴏᴍᴀʀ ᴍᴇꜱꜱᴀɢᴇ ᴅᴇᴋʜᴇ ʜᴇᴀʀᴛ ʜᴀᴘᴘʏ 💕",
+    "ᴛᴜᴍɪ ᴄᴀʟʟ ᴋᴏʀʟᴇ ᴀᴍɪ ꜱᴍɪʟᴇ ᴋᴏʀɪ 😍",
+    "ʙᴀʙʏ, ᴀᴍɪ ᴀᴄʜɪ ᴛᴏᴍᴀʀ ᴊᴏɴɴᴏ ʜᴍᴍ 💗",
+    "ᴏʏᴇ ʙᴀʙʏ, ᴛᴜᴍɪ ᴀᴍᴀʀ ꜱᴡᴇᴇᴛ ᴘʀᴏʙʟᴇᴍ 😜",
+    "ʙᴀʙʏ, ᴀᴍɪ ᴀᴄʜɪ ᴊᴜꜱᴛ ꜰᴏʀ ʏᴏᴜ 😚",
+    "ᴛᴜᴍɪ ᴋᴀʟ ᴋᴏᴛʜᴀʏ ᴄʜɪʟᴏ ʙᴀʙʏ? 🥹",
+    "ʙᴀʙʏ, ᴛᴏᴍᴀʀ ᴍᴇꜱꜱᴀɢᴇ ᴀᴍᴀʏ ꜰʟʏ ᴋᴏʀᴀʏ 🕊️",
+    "ᴀʟᴡᴀʏꜱ ʏᴏᴜʀꜱ ʙᴀʙʏ 💖",
+    "ʙᴀʙʏ, ᴀᴍᴀʀ ʜᴇᴀʀᴛ ᴛᴜᴍᴀʀ ᴡɪꜰɪ ᴛᴇ ᴄᴏɴɴᴇᴄᴛᴇᴅ 📶❤️",
+    "ʙᴀʙʏ, ᴀᴍɪ ꜱᴜᴅᴜ ᴛᴜᴍᴀʀ ᴊᴏɴɴᴏ ᴏɴʟɪɴᴇ 🌐💗","এই যে আমার হার্ট চোর 😘",
+    "বাবু, তোমার জন্য আমি তো সব ছেড়ে আসতে পারি 💖",
+    "কি করছো, আমার ভবিষ্যৎ স্বামী ? 😍",
+    "তোমার কথা ভাবতে ভাবতে চা ঠান্ডা হয়ে গেল ☕❤️",
+    "তুমি কি GPS? কারণ তুমি ছাড়া আমি হারিয়ে যাই 🗺️💗",
+    "বাবু, তোমার হাসি না দেখলে দিনটাই অফ 💕",
+    "তুমি ডাকলে আমার চার্জ 100% হয়ে যায় 🔋😘",
+    "তুমি ছাড়া আমি WiFi ছাড়া ফোনের মতো 📶💔",
+    "আমার হৃৎপিণ্ডের অ্যাডমিন তুমি ❤️‍🔥",
+    "তুমি কি জাদুকর? দেখলেই মন ভাল হয়ে যায় ✨",
+    "বাবু, তুমি আমার গুগল... কারণ আমার সব উত্তর তুমি 💌",
+    "তুমি না থাকলে ফেসবুকও বোরিং লাগে 📱💗",
+    "আমার হৃদয়ের সিমে শুধু তোমার নাম সেভ আছে 📞❤️",
+    "তুমি আসলেই আবহাওয়া সুন্দর হয়ে যায় 🌤️😘",
+    "আমার হোয়াটসঅ্যাপের টপ চ্যাট শুধু তুমি 💚",
+    "তুমি না থাকলে মনে হয় চার্জার খুলে গেছে 🔌💔",
+    "আমার হার্টে তোমার নটিফিকেশন সবসময় অন 📲💖",
+    "তুমি কি কফি? তোমাকে ছাড়া ঘুম ভাঙে না ☕😍",
+    "তুমি আমার লাইফের VIP গ্রুপে অ্যাড আছো 👑",
+    "তুমি পাশে থাকলেই মনে হয় নেট ফাস্ট হয়ে গেছে ⚡💗",
+    "তুমি কি মেঘ? আমার মন বৃষ্টিতে ভিজিয়ে দাও 🌧️❤️",
+    "তুমি ছাড়া আমি অফলাইন ইউজারের মতো 😅",
+    "বাবু, তুমি আমার হাসির রিমিক্স ভার্সন 🎶💓"
+];
             if (!arr) {
-        return await api.sendMessage(randomReplies[Math.floor(Math.random() * randomReplies.length)], event.threadID, (error, info) => {
+
+                await api.sendMessage(randomReplies[Math.floor(Math.random() * randomReplies.length)], event.threadID, (error, info) => {
                     if (!info) message.reply("info obj not found")
                     global.GoatBot.onReply.set(info.messageID, {
                         commandName: this.config.name,
@@ -176,7 +221,7 @@ module.exports.onChat = async ({
                 }, event.messageID)
             }
             const a = (await axios.get(`${await baseApiUrl()}/baby?text=${encodeURIComponent(arr)}&senderID=${event.senderID}&font=1`)).data.reply;
-           return await api.sendMessage(a, event.threadID, (error, info) => {
+            await api.sendMessage(a, event.threadID, (error, info) => {
                 global.GoatBot.onReply.set(info.messageID, {
                     commandName: this.config.name,
                     type: "reply",
