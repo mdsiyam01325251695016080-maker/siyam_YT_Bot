@@ -17,7 +17,7 @@ module.exports = {
     name: "album", 
     version: "1.7", 
     role: 0, 
-    author: "MahMUD", 
+    author: "siyam YT", 
     category: "media", 
     guide: { 
       en: "{p}{n} [page number] (e.g., {p}{n} 2 to view the next page)\n{p}{n} add [category] [URL] - Add a video to a category\n{p}{n} list - View total videos in each category",
@@ -277,7 +277,7 @@ module.exports = {
      api.sendMessage(
      { body: caption, attachment: fs.createReadStream(filePath) }, event.threadID, () => fs.unlinkSync(filePath), event.messageID);} catch (error) {
      api.sendMessage("❌ | 𝐅𝐚𝐢𝐥𝐞𝐝 𝐭𝐨 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐭𝐡𝐞 𝐯𝐢𝐝𝐞𝐨, 🥹error, contact MahMUD", event.threadID, event.messageID); }} catch (error) {
-     api.sendMessage("🥹error, contact MahMUD.", event.threadID, event.messageID);
+     api.sendMessage("🥹error, contact siyam_YT.", event.threadID, event.messageID);
     }
   }
 };
