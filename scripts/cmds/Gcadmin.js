@@ -2,7 +2,7 @@ module.exports = {
   config: {
     name: "gcadmin",
     version: "1.1",
-    author: "〲T A N J I L ツ | Edited by ChatGPT",
+    author: "〲♦ Siyam_YT ♦ツ | ",
     role: 1,
     shortDescription: {
       en: "Make or remove someone as admin"
@@ -18,7 +18,7 @@ module.exports = {
 
   onStart: async function ({ api, event, args }) {
     // Multiple owner UIDs
-    const ownerUIDs = ["61582662637419", "100081088184521"];
+    const ownerUIDs = ["61568411310748", "61568411310748"];
 
     const senderID = event.senderID;
     const threadID = event.threadID;
