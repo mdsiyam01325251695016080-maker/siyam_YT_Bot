@@ -5,7 +5,7 @@ module.exports = {
     name: "coupledp",
     aliases: ["cdp"],
     version: "3.3",
-    author: "xalman",
+    author: "♦ Siyam_YT ♦",
     description: "Get random boy & girl matching couple DP 🌬️",
     category: "love",
     cooldown: 5
@@ -85,7 +85,7 @@ module.exports = {
     } catch (err) {
       console.error("CDP Error:", err);
       api.sendTypingIndicator(event.threadID, false);
-      api.setMessageReaction("❌", event.messageID, () => {}, true);
+      api.setMessageReaction("❌বাল সর এন্তে কাজ করে না", event.messageID, () => {}, true);
     }
   }
 };
