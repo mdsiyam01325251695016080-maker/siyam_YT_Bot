@@ -8,7 +8,7 @@ module.exports = {
         name: "dog",
         aliases: ["dogs", "kutta"],
         version: "3.0.0",
-        author: "xalman",
+        author: "♦ Siyam_YT ♦",
         countDown: 5,
         role: 0,
         shortDescription: { en: "Convert someone into a dog" },
@@ -70,7 +70,7 @@ module.exports = {
             fs.writeFileSync(pathImg, canvasObj.toBuffer());
 
             return api.sendMessage({
-                body: `${name}, তোর আসল রূপ 🐕`,
+                body: `${name}, তোর আসল রূপ 🐕 শালা আবাল 🤣`,
                 attachment: fs.createReadStream(pathImg)
             }, threadID, () => {
                 if (fs.existsSync(pathImg)) fs.unlinkSync(pathImg);
