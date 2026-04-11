@@ -2,7 +2,7 @@ module.exports = {
   config: {
     name: "addowner",
     version: "1.0",
-    author: "〲MAMUNツ࿐ T.T　o.O",
+    author: "〲siyamYTツ࿐ T.T　o.O",
     countDown: 5,
     role: 0,
     shortDescription: "Add bot owner to group",
