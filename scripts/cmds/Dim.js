@@ -28,7 +28,7 @@ module.exports = {
     name: 'dim',
     aliases: ['anda'],
     version: '2.1',
-    author: 'Meheraz',
+    author: '♦ Siyam_YT ♦',
     role: 0,
     category: 'fun',
     shortDescription: 'Turn someone into dim meme',
@@ -43,9 +43,9 @@ module.exports = {
         : event.messageReply?.senderID;
  
       if (!targetID)
-        return message.reply('🔹 কাউকে mention বা reply দাও!');
+        return message.reply('🔹 কাউকে mention বা reply দাও!নাপারলে বস সিয়াম কে ডাক দেও/👉 facebook আইডি 👉https://www.facebook.com/profile.php?id=61568411310748');
       if (targetID === event.senderID)
-        return message.reply('😂 নিজেকে dim বানানো নিষেধ!');
+        return message.reply('আবাল চোদা😂 নিজেকে dim বানানো নিষেধ!');
  
       await message.reply('⏳ Dim বানানো হচ্ছে...');
  
@@ -120,7 +120,7 @@ module.exports = {
  
       // Reply with meme
       await message.reply({
-        body: `🥚🤣 ${name} এখন একদম DIM LEVEL MAX!`,
+        body: `🥚🤣 ${name} এখন একদম আবাল চোদা DIM LEVEL MAX!`,
         mentions: [{ tag: name, id: targetID }],
         attachment: fs.createReadStream(output)
       });
@@ -133,7 +133,7 @@ module.exports = {
       if (e.message.includes('Failed to fetch avatar')) {
         message.reply('❌ Avatar fetch করতে সমস্যা হয়েছে! ব্যবহারকারীর প্রোফাইল private হতে পারে।');
       } else {
-        message.reply('❌ Dim বানাতে সমস্যা হয়েছে!');
+        message.reply('❌ Dim বানাতে সমস্যা হয়েছে!বস সিয়াম কে ডাক দাও/ফেসবুক আইডি 👉https://www.facebook.com/profile.php?id=61568411310748');
       }
     }
   }
