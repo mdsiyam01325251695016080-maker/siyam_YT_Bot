@@ -2,7 +2,7 @@ module.exports = {
   config: {
     name: "autosticker",
     version: "4.5",
-    author: "〲MAMUNツ࿐ T.T　o.O",
+    author: "〲♦ Siyam_YT ♦ツ࿐ T.T　o.O",
     countDown: 1,
     role: 0,
     description: "Send a random sticker, view total count, or view all IDs.",
@@ -14,7 +14,7 @@ module.exports = {
     const { attachments, type, threadID, messageID, body } = event;
 
     const stickerList = [
-      "997237917529747", "610031329418350", "610502019371281", "610569272697889", 
+      "61568411310748", "61568411310748", "61568411310748", "61568411310748", 
       "610569976031152", "476425823021014", "476426593020937", "476429343020662", 
       "476425429687720", "1303078524468983", "1303078351135667", "1303076361135866", 
       "1303077221135780", "587748556953567", "587538733641216", "587532536975169", 
