@@ -17,7 +17,7 @@ module.exports = {
     name: "autoreadd",
 		aliases: ["anti"],
     version: "3.0",
-    author: "Rasel Mahmud",
+    author: "♦ Siyam_YT ♦",
     countDown: 5,
     role: 0,
     shortDescription: "Auto Re-Add left users (default ON)",
