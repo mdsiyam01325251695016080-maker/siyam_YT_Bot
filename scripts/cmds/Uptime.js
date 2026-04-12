@@ -4,7 +4,7 @@ module.exports = {
   config: {
     name: "uptime",
     version: "3.0",
-    author: "〲MAMUNツ࿐ T.T　o.O",
+    author: "亗 SIYAM HASAN 亗",
     countDown: 5,
     role: 0,
     shortDescription: "Pro uptime status",
@@ -29,23 +29,25 @@ module.exports = {
     const ping = Date.now() - start;
 
     const msg = `
-╔══ ♡┋ 𝙋𝙊𝙊𝙆𝙄𝙀 ᥫ᭡🎀🙂❀══╗
-
-🤖 Bot:  ♡┋ 𝙋𝙊𝙊𝙆𝙄𝙀 ᥫ᭡🎀🙂
-
-👑 Owner: 〲MAMUNツ࿐ T.T　o.O
-
-⏰ Uptime: ${d}d ${h}h ${m}m ${s}s
-
-⚡ Ping: ${ping} ms
-
-💻 CPU: ${os.cpus()[0].model}
-
-💾 RAM: ${freeMem}GB / ${totalMem}GB
-
-📡 Platform: ${os.platform()}
-
-╚══ ♡┋ 𝙋𝙊𝙊𝙆𝙄𝙀 ᥫ᭡🎀🙂❀══╝
+╔━━━❖❖❖ 🚀 𝗦𝗜𝗬𝗔𝗠 𝗛𝗔𝗦𝗔𝗡 𝗖𝗛𝗔𝗧 𝗕𝗢𝗧 🚀 ❖❖❖━━━╗
+┃
+┃ 🤖 Bot Name   ➤ SIYAM HASAN BOT 🤖
+┃ 👑 Owner      ➤ SIYAM HASAN 👑
+┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃ ⏰ Uptime     ➤ ${d}d ${h}h ${m}m ${s}s
+┃ ⚡ Ping       ➤ ${ping} ms
+┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃ 💻 CPU        ➤ ${os.cpus()[0].model}
+┃ 💾 RAM        ➤ ${freeMem}GB / ${totalMem}GB
+┃ 📡 Platform   ➤ ${os.platform()}
+┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃ 🧠 Status     ➤ Online & Running 🟢
+┃ 🔥 Mode       ➤ Dynamic VIP ⚡
+┃
+╚━━━❖❖❖ ⚡ 𝗣𝗢𝗪𝗘𝗥𝗘𝗗 𝗕𝗬 𝗦𝗜𝗬𝗔𝗠 ⚡ ❖❖❖━━━╝
 `;
 
     message.reply(msg);
@@ -58,7 +60,7 @@ module.exports = {
       const m = Math.floor((uptime % 3600) / 60);
       const s = Math.floor(uptime % 60);
 
-      message.reply(`⏰ Bot Uptime: ${h}h ${m}m ${s}s`);
+      message.reply(`🚀 SIYAM BOT UPTIME ➤ ${h}h ${m}m ${s}s ⚡`);
     }
   }
 };
