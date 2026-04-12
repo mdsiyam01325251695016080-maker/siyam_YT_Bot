@@ -18,32 +18,30 @@ module.exports = {
   onStart: async function ({ api, event }) {
 
     const profileText = 
-`╔══════════════════════════════════╗
-║      🌌✨ PROFILE CARD ✨🌌      ║
-╠══════════════════════════════════╣
-
-🌟 Name      : 〲KEYA ツ࿐ T.T o.O
-
-🎂 Age       : 17+
-
-🆔 FF ID     : 3246615019
-
-💌 Status    : MAMUN ER WIFE 💖
-
-📍 Location  : Rajshahi, Bangladesh
-
-🎮 Hobbies   : Gaming 🎮 | Adda | Music 🎶
-
-╠══════════════════════════════════╣
-
-🔗 Social Info:
-• WhatsApp : jamai pitabe 😆
-• TikTok   : calai nh ❌
-
-🎯 Favorite Game:
-• Free Fire 🔫
-
-╚══════════════════════════════════╝`;
+`╔━━━❖❖❖ 🌑🔥 𝗩𝗜𝗣 𝗣𝗥𝗢𝗙𝗜𝗟𝗘 🔥🌑 ❖❖❖━━━╗
+┃
+┃   👑 𝑵𝑨𝑴𝑬 ➤ ♦ 𝗦𝗜𝗬𝗔𝗠_𝗬𝗧 ♦ ツ࿐ T.T o.O
+┃   🎂 𝑨𝑮𝑬  ➤ 17+
+┃   🆔 𝑭𝑭 𝑰𝑫 ➤ https://www.facebook.com/share/1H5WhEx2Nf/
+┃   💖 𝑺𝑻𝑨𝑻𝑼𝑺 ➤ Single 💘
+┃   📍 𝑳𝑶𝑪𝑨𝑻𝑰𝑶𝑵 ➤ Kishoreganj, Bangladesh
+┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃        🎮 𝗛𝗢𝗕𝗕𝗜𝗘𝗦 🎮
+┃   ➤ Gaming 🎯 | Adda 😎 | Music 🎧
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃        🔗 𝗦𝗢𝗖𝗜𝗔𝗟 𝗭𝗢𝗡𝗘 🔗
+┃   📱 WhatsApp ➤ 01789138157
+┃   🎵 TikTok   ➤ siyam0178913
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃       ⚔️ 𝗙𝗔𝗩𝗢𝗥𝗜𝗧𝗘 𝗚𝗔𝗠𝗘 ⚔️
+┃   🔥 Free Fire 🔫 (Pro Player)
+┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃   🧠 𝗔𝗧𝗧𝗜𝗧𝗨𝗗𝗘 ➤ Silent Boy 😶‍🌫️
+┃   💎 𝗦𝗧𝗬𝗟𝗘 ➤ VIP & Royal 👑
+┃
+╚━━━❖❖❖ ⚡ 𝗞𝗜𝗡𝗚 𝗢𝗙 𝗦𝗜𝗬𝗔𝗠 ⚡ ❖❖❖━━━╝`;
 
     const cacheDir = path.join(__dirname, "cache");
     const imgPath = path.join(cacheDir, "keya.jpg");
