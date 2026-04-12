@@ -1,154 +1,167 @@
-const { getPrefix } = global.utils;
+const axios = require("axios");
+const { getPrefix, getStreamFromURL } = global.utils;
 const { commands, aliases } = global.GoatBot;
 
-function fancyText(text) {
-  const map = {
-    'a': '𝖺','b': '𝖻','c': '𝖼','d': '𝖽','e': '𝖾','f': '𝖿','g': '𝗀','h': '𝗁','i': '𝗂','j': '𝗃','k': '𝗄','l': '𝗅','m': '𝗆','n': '𝗇','o': '𝗈','p': '𝗉','q': '𝗊','r': '𝗋','s': '𝗌','t': '𝗍','u': '𝗎','v': '𝗏','w': '𝗐','x': '𝗑','y': '𝗒','z': '𝗓',
-    'A': '𝖠','B': '𝖡','C': '𝖢','D': '𝖣','E': '𝖤','F': '𝖥','G': '𝖦','H': '𝖧','I': '𝖨','J': '𝖩','K': '𝖪','L': '𝖫','M': '𝖬','N': '𝖭','O': '𝖮','P': '𝖯','Q': '𝖰','R': '𝖱','S': '𝖲','T': '𝖳','U': '𝖴','V': '𝖵','W': '𝖶','X': '𝖷','Y': '𝖸','Z': '𝖹'
-  };
-  return text.split("").map(c => map[c] || c).join("");
+const HELP_VIDEO = "https://files.catbox.moe/g5vr8h.mp4";
+
+let fontsLoaded = false;
+let xfont = {}, yfont = {}, categoryEmoji = {};
+
+// ✅ LOAD RESOURCES (ONCE ONLY)
+async function loadResources() {
+  if (fontsLoaded) return;
+  try {
+    const [x, y, c] = await Promise.all([
+      axios.get("https://raw.githubusercontent.com/Saim-x69x/sakura/main/xfont.json"),
+      axios.get("https://raw.githubusercontent.com/Saim-x69x/sakura/main/yfont.json"),
+      axios.get("https://raw.githubusercontent.com/Saim-x69x/sakura/main/category.json")
+    ]);
+    xfont = x.data;
+    yfont = y.data;
+    categoryEmoji = c.data;
+    fontsLoaded = true;
+  } catch {
+    fontsLoaded = true;
+  }
 }
 
-const categoryEmoji = (category) => {
-  const emojiMap = {
-    'info':'📚','system':'⚙️','bot':'🤖','admin':'👑','owner':'👁️',
-    'group':'👥','fun':'🎮','game':'🎲','media':'🎵','video':'🎬',
-    'utility':'🔧','economy':'💰','image':'🖼️','education':'🎓',
-    'chat':'💬','ai':'🧠','search':'🔍','security':'🛡️','misc':'📦',
-    'love':'💖','family':'👨‍👩‍👧‍👦','health':'🏥','sports':'⚽',
-    'travel':'✈️','business':'💼','technology':'💻','science':'🔬',
-    'religion':'🕌','default':'📁'
-  };
-
-  const cat = category.toLowerCase();
-  if (emojiMap[cat]) return emojiMap[cat];
-
-  for (const [key, emoji] of Object.entries(emojiMap)) {
-    if (cat.includes(key) || key.includes(cat)) return emoji;
-  }
-
-  return emojiMap.default;
+// ✅ FONT CONVERT
+const font = (text, type = "command") => {
+  const map = type === "category" ? xfont : yfont;
+  return text.split("").map(c => map[c] || c).join("");
 };
+
+// ✅ CATEGORY EMOJI
+const getEmoji = (cat) =>
+  categoryEmoji?.[cat.toLowerCase()] || "🗂️";
+
+// ✅ ROLE TEXT
+const roleText = (r) =>
+  ["👤 All", "👑 Admin", "⚡ Owner"][r] || "Unknown";
+
+// ✅ FIND COMMAND (FAST + FULL)
+function findCmd(name) {
+  name = name.toLowerCase();
+
+  if (commands.has(name)) return commands.get(name);
+  if (aliases.has(name)) return commands.get(aliases.get(name));
+
+  for (const [, cmd] of commands) {
+    const a = cmd.config?.aliases;
+    if (Array.isArray(a) && a.includes(name)) return cmd;
+    if (typeof a === "string" && a === name) return cmd;
+  }
+  return null;
+}
 
 module.exports = {
   config: {
     name: "help2",
-    version: "3.0",
-    author: "Siyam Hasan",
+    aliases: ["menu2"],
+    version: "4.0",
+    author: "SIYAM",
     role: 0,
-    countDown: 5,
-    description: { en: "👑 Royal styled command list & details" },
-    category: "Info",
-    guide: { en: "{pn} [command_name]" }
+    category: "info",
+    shortDescription: "Advanced help system",
+    guide: "{pn} | {pn} <command> | {pn} -c <category>"
   },
 
   onStart: async function ({ message, args, event, role }) {
+    await loadResources();
+
     const prefix = getPrefix(event.threadID);
-    const input = args[0]?.toLowerCase();
+    const input = args.join(" ").trim();
 
-    let cmd = null;
-
-    if (input) {
-      if (commands.has(input)) {
-        cmd = commands.get(input);
-      } else if (aliases.has(input)) {
-        cmd = commands.get(aliases.get(input));
-      } else {
-        return message.reply(`
-╔═══════❖ ❌ NOT FOUND ❖═══════╗
-┃ 🔍 Command: "${input}"
-┃ 📌 Use: ${prefix}help
-╚══════════════════════════════╝`);
-      }
-    }
-
-    if (cmd) {
-      const cfg = cmd.config;
-
-      const desc = typeof cfg.description === "string"
-        ? cfg.description
-        : cfg.description?.en || "No description";
-
-      const usage = typeof cfg.guide?.en === "string"
-        ? cfg.guide.en.replace(/\{pn\}/g, prefix + cfg.name)
-        : `${prefix}${cfg.name}`;
-
-      const aliasesList = cfg.aliases
-        ? cfg.aliases.map(a => `${prefix}${a}`).join(", ")
-        : "None";
-
-      const helpMessage = `
-╔═══════👑 SIYAM ROYAL HELP 👑═══════╗
-┃ 📛 Name: ${prefix}${cfg.name}
-┃ 🗂 Category: ${categoryEmoji(cfg.category)} ${cfg.category}
-┃ 📄 Description: ${desc}
-┃ ⚙ Version: ${cfg.version}
-┃ ⏳ Cooldown: ${cfg.countDown}s
-┃ 🔒 Role: ${cfg.role === 0 ? "All" : cfg.role === 1 ? "Admin" : "Owner"}
-┃ 👑 Author: Siyam Hasan
-┃ 🔤 Aliases: ${aliasesList}
-╠══════════════ USAGE ══════════════╣
-${usage.split('\n').map(line => `┃ ➤ ${line}`).join('\n')}
-╚══════════════════════════════════╝
-`;
-
-      return message.reply(helpMessage);
-    }
-
+    // ✅ BUILD CATEGORY MAP (OPTIMIZED)
     const categories = {};
-    for (const [, c] of commands) {
-      if (c.config.role > role) continue;
-      const cat = c.config.category || "Other";
-      if (!categories[cat]) categories[cat] = [];
-      categories[cat].push(c.config.name);
+    for (const [, cmd] of commands) {
+      if (!cmd?.config || cmd.config.role > role) continue;
+
+      const cat = (cmd.config.category || "others").toUpperCase();
+      (categories[cat] ||= []).push(cmd.config.name);
     }
 
-    let msg = `
-╔═══════👑 SIYAM BOT MENU 👑═══════╗
-`;
+    // ✅ CATEGORY FILTER
+    if (args[0] === "-c" && args[1]) {
+      const cat = args[1].toUpperCase();
+      if (!categories[cat])
+        return message.reply(`❌ Category "${cat}" not found`);
 
-    const sortedCategories = Object.keys(categories).sort();
+      let msg = `╭─────✰『 ${getEmoji(cat)} ${font(cat, "category")} 』\n`;
+      for (const c of categories[cat].sort())
+        msg += `│⚡ ${font(c)}\n`;
+      msg += `╰────────────✰\n`;
+      msg += `> TOTAL: ${categories[cat].length}\n> PREFIX: ${prefix}`;
 
-    for (const cat of sortedCategories) {
-      const categoryName = fancyText(cat.toUpperCase());
-      const commandsList = categories[cat].sort();
+      return message.reply({
+        body: msg,
+        attachment: await getStreamFromURL(HELP_VIDEO)
+      });
+    }
 
-      msg += `
-╠═══ ${categoryEmoji(cat)} ${categoryName} ═══╣
-`;
+    // ✅ MAIN MENU
+    if (!input) {
+      let msg = `╭───────❁\n│✨ 𝗛𝗘𝗟𝗣 2 𝗠𝗘𝗡𝗨 ✨\n╰────────────❁\n`;
 
-      for (let i = 0; i < commandsList.length; i += 2) {
-        const cmd1 = commandsList[i];
-        const cmd2 = commandsList[i + 1];
-
-        msg += cmd2
-          ? `┃ ➤ ${cmd1.padEnd(14)} ${cmd2}\n`
-          : `┃ ➤ ${cmd1}\n`;
+      for (const cat of Object.keys(categories).sort()) {
+        msg += `╭─────✰『 ${getEmoji(cat)} ${font(cat, "category")} 』\n`;
+        for (const c of categories[cat].sort())
+          msg += `│⚡ ${font(c)}\n`;
+        msg += `╰────────────✰\n`;
       }
+
+      const total = Object.values(categories).flat().length;
+
+      msg += `╭─────✰[🌟 INFO 🌟]
+│> TOTAL COMMANDS: ${total}
+│> PREFIX: ${prefix}
+│> USE: ${prefix}help2 <command>
+╰────────────✰`;
+
+      return message.reply({
+        body: msg,
+        attachment: await getStreamFromURL(HELP_VIDEO)
+      });
     }
 
-    const totalCommands = Object.values(categories).flat().length;
+    // ✅ COMMAND DETAILS
+    const cmd = findCmd(input);
+    if (!cmd)
+      return message.reply(`❌ Command "${input}" not found`);
 
-    msg += `
-╠══════════════ 📊 STATS ══════════════╣
-┃ Total Commands: ${totalCommands}
-┃ Total Categories: ${sortedCategories.length}
-╠══════════════ 👤 OWNER INFO ══════════════╣
-┃ Name: Uday Hasan Siyam
-┃ Location: Kishoreganj, Bangladesh
-┃ Study: Class 10
-┃ School: Emni Mannan High School
-┃ Age: 16+
-┃ Work: Student
-┃ Facebook: [Your FB Link]
-┃ Number: [Your Number]
-╠══════════════ 🚀 SYSTEM ══════════════╣
-┃ Prefix: ${prefix}
-┃ Developer: Siyam Hasan
-┃ Use: ${prefix}help <command>
-╚══════════════════════════════════════╝
-`;
+    const c = cmd.config;
 
-    return message.reply(msg);
+    const desc =
+      typeof c.description === "string"
+        ? c.description
+        : c.description?.en || "No description";
+
+    const usage =
+      typeof c.guide?.en === "string"
+        ? c.guide.en.replace(/\{pn\}/g, prefix + c.name)
+        : `${prefix}${c.name}`;
+
+    const alias =
+      Array.isArray(c.aliases)
+        ? c.aliases.join(", ")
+        : c.aliases || "None";
+
+    const msg = `
+╭─── COMMAND INFO ───╮
+🔹 Name: ${c.name}
+📂 Category: ${c.category}
+📜 Description: ${desc}
+🔁 Aliases: ${alias}
+⚙️ Version: ${c.version || "1.0"}
+🔐 Role: ${roleText(c.role)}
+⏱️ Cooldown: ${c.countDown || 1}s
+👑 Author: ${c.author || "Unknown"}
+📖 Usage: ${usage}
+╰───────────────────╯`;
+
+    return message.reply({
+      body: msg,
+      attachment: await getStreamFromURL(HELP_VIDEO)
+    });
   }
 };
