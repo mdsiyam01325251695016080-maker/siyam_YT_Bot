@@ -2,7 +2,7 @@ module.exports = {
   config: {
     name: "spy",
     version: "1.5",
-    author: "xalman",
+    author: "♦ Siyam_YT ♦",
     role: 0,
     countDown: 5,
     shortDescription: "Deep dive into user stats",
@@ -57,29 +57,32 @@ module.exports = {
       const rank = rankIdx !== -1 ? `#${rankIdx + 1}` : "—";
 
       const cardMessage = `
-╔════════════════════╗
-║ 🚀 PROFILE CARD ♦️ 
-╚════════════════════╝
-
-👤 Name       : ${fullName}
-💬 Nickname   : ${nickname}
-🆔 UID        : ${targetID}
-
-💸 Balance    : $${balance}
-⚡ XP         : ${xp}
-🎚 Level      : ${lvl}
-🏅 Rank       : ${rank}
-
-⚧ Gender     : ${genderStr}
-🎂 Birthday  : ${birthday}
-📍 Location  : ${location}
-🤝 Friend     : ${isFriend}
-💌 Relation  : Single
-
-🔗 Profile   : https://www.facebook.com/${targetID}
-
-✨ Requested by: ${requesterName}
-────────────────────────────
+╔━━━❖❖❖ 🚀🌌 𝗣𝗥𝗢𝗙𝗜𝗟𝗘 𝗖𝗔𝗥𝗗 🌌🚀 ❖❖❖━━━╗
+┃
+┃   👤 𝗡𝗮𝗺𝗲        ➤ ${fullName}
+┃   💬 𝗡𝗶𝗰𝗸𝗻𝗮𝗺𝗲    ➤ ${nickname}
+┃   🆔 𝗨𝗜𝗗         ➤ ${targetID}
+┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃   💸 𝗕𝗮𝗹𝗮𝗻𝗰𝗲     ➤ $${balance}
+┃   ⚡ 𝗫𝗣          ➤ ${xp}
+┃   🎚 𝗟𝗲𝘃𝗲𝗹       ➤ ${lvl}
+┃   🏅 𝗥𝗮𝗻𝗸        ➤ ${rank}
+┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃   ⚧ 𝗚𝗲𝗻𝗱𝗲𝗿      ➤ ${genderStr}
+┃   🎂 𝗕𝗶𝗿𝘁𝗵𝗱𝗮𝘆   ➤ ${birthday}
+┃   📍 𝗟𝗼𝗰𝗮𝘁𝗶𝗼𝗻   ➤ ${location}
+┃   🤝 𝗙𝗿𝗶𝗲𝗻𝗱      ➤ ${isFriend}
+┃   💌 𝗥𝗲𝗹𝗮𝘁𝗶𝗼𝗻   ➤ Single
+┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃   🔗 𝗣𝗿𝗼𝗳𝗶𝗹𝗲     ➤ https://www.facebook.com/${targetID}
+┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃   ✨ 𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝗲𝗱 𝗕𝘆 ➤ ${requesterName}
+┃
+╚━━━❖❖❖ ⚡ 𝗣𝗢𝗪𝗘𝗥𝗘𝗗 𝗕𝗬 𝗩𝗜𝗣 ⚡ ❖❖❖━━━╝
 `;
 
       await message.reply({
