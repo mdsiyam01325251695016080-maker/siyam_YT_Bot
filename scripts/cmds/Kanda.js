@@ -21,7 +21,7 @@ module.exports = {
     const senderID = event.senderID;
 
     const loadingMessage = await message.reply({
-      body: "kanda aaudaixa... ekxin parkhi muji! 🤡",
+      body: "🥵দারা দিতছি 🤠বস সিয়াম কে বলবি না 🥵! 👉কিন্তো🤫",
     });
 
     const link = [
