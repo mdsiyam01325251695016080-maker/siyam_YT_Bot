@@ -5,7 +5,7 @@ module.exports = {
         name: "notification2",
         aliases: ["notify2", "noti2"],
         version: "2.4",
-        author: "Rasel Mahmud",
+        author: "♦ Siyam_YT ♦",
         countDown: 5,
         role: 2,
         description: "Send stylish notification to all groups and forward replies to admin",
@@ -19,7 +19,7 @@ module.exports = {
     langs: {
         en: {
             missingMessage: "Please enter the message you want to send",
-            autoReplyMessage: "📌 Thanks for your reply! Admin 亗🅼🅰ᥫᩣ🅼ᥫᩣ🆄🅽×͜×  will be notified.",
+            autoReplyMessage: "📌 Thanks for your reply! Admin 亗🆂🅸ᥫᩣ🆈🅰ᥫᩣ🅼×͜× 🅷🅰ᥫᩣ🆂🅰ᥫᩣ🅽亗×  will be notified.",
             sentNotification: "✅ Sent notification to %1 groups",
             errorNotification: "❌ Failed to send to %1 groups"
         }
@@ -29,7 +29,7 @@ module.exports = {
         if (!args[0]) return message.reply(getLang("missingMessage"));
 
         const adminID = envCommands[this.config.name].adminID;
-        const senderName = "亗🅼🅰ᥫᩣ🅼ᥫᩣ🆄🅽×͜×";
+        const senderName = "亗🆂🅸ᥫᩣ🆈🅰ᥫᩣ🅼×͜× 🅷🅰ᥫᩣ🆂🅰ᥫᩣ🅽亗×";
 
         const allThreads = (await threadsData.getAll()).filter(t => t.isGroup);
 
