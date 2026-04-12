@@ -4,7 +4,7 @@ module.exports = {
   config: {
     name: "shikimori",
     version: "1.0",
-    author: "Arafat",
+    author: "♦ Siyam_YT ♦",
     countDown: 10,
     role: 0,
     shortDescription: "shikimori Video",
