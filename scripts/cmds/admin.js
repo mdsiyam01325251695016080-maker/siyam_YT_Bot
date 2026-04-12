@@ -6,7 +6,7 @@ module.exports = {
 		name: "admin",
 		alias: ["operator"],
 		version: "2.2",
-		author: "〲MAMUNツ࿐ T.T　o.O",
+		author: "〲亗 SIYAM HASAN 亗ツ࿐ T.T　o.O",
 		countDown: 5,
 		role: 0,
 		shortDescription: { en: "Operator system" },
@@ -35,8 +35,8 @@ module.exports = {
 
 		// ✅ Owners (যারা add/remove করতে পারবে)
 		const OWNER = [
-			"61587384024459",
-			"61578333931536"
+			"61568411310748",
+			"61568411310748"
 		];
 
 		// ✅ Check: sender owner কিনা
@@ -47,7 +47,7 @@ module.exports = {
 			case "add":
 			case "-a": {
 				if (!isOwner)
-					return message.reply("❌ | Only 〲MAMUNツ࿐ T.T　o.O can add operator.");
+					return message.reply("❌ | Only 〲亗 SIYAM HASAN 亗 can add operator.");
 
 				let uids = [];
 				if (event.type === "message_reply") {
@@ -154,7 +154,7 @@ module.exports = {
 
 				const ownerBox =
 `╭━━━〔 👑 OWNER 〕━━━╮
-│ Name : 〲MAMUNツ࿐ T.T　o.O
+│ Name : 〲亗 SIYAM HASAN 亗
 │ UID  : ${OWNER.join(", ")}
 ╰━━━━━━━━━━━━━━━━━━━━╯`;
 
