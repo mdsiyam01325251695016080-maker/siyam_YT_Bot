@@ -9,7 +9,7 @@ module.exports = {
   config: {
     name: "sms",
     version: "1.1.1",
-    author: "Azadx69x",
+    author: "♦ Siyam_YT ♦",
     countDown: 15,
     role: 0,
     shortDescription: { en: "API call (BD)" },
@@ -37,7 +37,7 @@ module.exports = {
     const level = expToLevel(exp);
 
     if (level < 2) {
-      return message.reply("🚫 এই কমান্ড ব্যবহার করতে tk লাগবে");
+      return message.reply("🚫 এই কমান্ড ব্যবহার করতে tk লাগবে😩বস সিয়াম কে ডাক দে😈");
     }
 
     if (balance < 100) {
