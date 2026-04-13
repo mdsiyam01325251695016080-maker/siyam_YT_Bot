@@ -6,7 +6,7 @@ module.exports = {
     name: "notification",
     aliases: ["notify", "noti"],
     version: "2.3",
-    author: "xalmam",
+    author: "亗 SIYAM HASAN 亗",
     countDown: 5,
     role: 2,
     shortDescription: {
@@ -60,8 +60,8 @@ module.exports = {
     }
 
     
-    const owner = "×᷼×ＭＡ☂Ｍ☂ＵＮ☆"; 
-    const fb = "MA M UN Bb'z";
+    const owner = "×᷼×亗 SIYAM HASAN 亗☆"; 
+    const fb = "亗 SIYAM HASAN 亗";
 
     
     const formSend = {
