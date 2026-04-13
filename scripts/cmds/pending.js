@@ -47,9 +47,9 @@ module.exports = {
 
         api.sendMessage(
 `╭─🚫 ACCESS DENIED 🚫─╮
-│ 🤖 Bot : Refused
+│ 🤖 Bot : 𝑺𝒊𝒚𝒂𝒎 𝑪𝒉𝒂𝒕 𝑩𝒐𝒕
 │ 🔗 Prefix : ${prefix}
-│ ⚡ Owner : 亗🅼🅰ᥫᩣ🅼ᥫᩣ🆄🅽×͜×
+│ ⚡ Owner : 亗亗 SIYAM HASAN 亗×͜×
 │ ⏰ Date/Time : ${dateTime}
 ╰──────────────────╯`,
           targetThreadID
@@ -76,9 +76,9 @@ module.exports = {
 
       api.sendMessage(
 `╭─✨ SYSTEM GOAT ✨─╮
-│ 🤖 Bot : Activated
+│ 🤖 Bot : 𝑺𝒊𝒚𝒂𝒎 𝑪𝒉𝒂𝒕 𝑩𝒐𝒕
 │ 🔗 Prefix : ${prefix}
-│ ⚡ Owner : 亗🅼🅰ᥫᩣ🅼ᥫᩣ🆄🅽×͜×
+│ ⚡ Owner : 亗亗 SIYAM HASAN 亗×͜×
 │ ⏰ Date/Time : ${dateTime}
 ╰─✅ Access Granted─╯`,
         targetThreadID
