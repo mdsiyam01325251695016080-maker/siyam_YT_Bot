@@ -5,7 +5,7 @@ module.exports = {
 		name: "file",
 		aliases: ["files"],
 		version: "1.0",
-		author: "Mahir Tahsan",
+		author: "亗 SIYAM HASAN 亗",
 		countDown: 5,
 		role: 0,
 		shortDescription: "Send bot script",
@@ -15,9 +15,9 @@ module.exports = {
 	},
 
 	onStart: async function ({ message, args, api, event }) {
-		const permission = ["61587384024459", "61578333931536",];
+		const permission = ["61568411310748", "61584641872032",];
 		if (!permission.includes(event.senderID)) {
-			return api.sendMessage(" khankir chele ja vaggg bot ki tor baper 😒", event.threadID, event.messageID);
+			return api.sendMessage(" খনকির ছেলে বট কি তর বাপের জা বাগ😒 না হলে তোর মাকে👉চুদব🤤", event.threadID, event.messageID);
 		}
 
 		const fileName = args[0];
