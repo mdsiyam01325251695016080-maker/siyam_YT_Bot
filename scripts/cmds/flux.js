@@ -6,7 +6,7 @@ module.exports = {
     name: "flux",
     aliases: [],
     version: "5.0",
-    author: "nexo_here",
+    author: "亗 SIYAM HASAN 亗",
     countDown: 5,
     role: 0,
     shortDescription: "Generate ultra-realistic AI images with advanced style options",
