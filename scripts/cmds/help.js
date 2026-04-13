@@ -7,7 +7,7 @@ module.exports = {
     name: "help",
     aliases: ["menu", "commands"],
     version: "5.0",
-    author: "亗🅼🅰ᥫᩣ🅼ᥫᩣ🆄🅽×͜×",
+    author: "亗亗 SIYAM HASAN 亗",
     shortDescription: "Show all commands",
     longDescription: "Show all commands in fancy font with boxes",
     category: "system",
@@ -65,7 +65,7 @@ module.exports = {
     let msg = `│\n│  ${fancyFont("COMMANDS MENU")}\n│  ───────────────\n`;
     msg += `│  ${fancyFont("PREFIX")} : ${prefix}\n`;
     msg += `│  ${fancyFont("TOTAL")}  : ${allCommands.size}\n`;
-    msg += `│  ${fancyFont("AUTHOR")} : 亗🅼🅰ᥫᩣ🅼ᥫᩣ🆄🅽×͜×\n│\n`;
+    msg += `│  ${fancyFont("AUTHOR")} : 亗 SIYAM HASAN 亗×͜×\n│\n`;
 
     for (const cat of Object.keys(categories)) {
       msg += `│  ┌─ ${categoryFont(cat.toUpperCase())} ─┐\n`;
