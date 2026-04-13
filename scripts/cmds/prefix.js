@@ -4,8 +4,8 @@ const moment = require("moment-timezone");
 const getStreamFromURL = global.utils.getStreamFromURL;
 
 const gifList = [
-	"https://files.catbox.moe/trmgdg.mp4",
-   "https://files.catbox.moe/a03xbs.mp4"
+"https://files.catbox.moe/nkit0j.mp4",
+"https://files.catbox.moe/nkit0j.mp4"
 ];
 
 const getRandomGif = () =>
@@ -14,12 +14,13 @@ const getRandomGif = () =>
 module.exports = {
 	config: {
 		name: "prefix",
-		version: "2.2",
-		author: "xalman",
+		version: "3.0 VIP",
+		author: "Siyam Hasan + VIP Edit",
 		countDown: 5,
 		role: 0,
-		description: "Change & show bot prefix ",
-		category: "config"
+		description: "VIP Prefix Panel System",
+		category: "config",
+		prefix: "!"
 	},
 
 	langs: {
@@ -27,10 +28,25 @@ module.exports = {
 			usage: "❌ Usage: prefix <newPrefix> | prefix reset | prefix <newPrefix> -g",
 			reset: "✅ Prefix reset successful!\n🔰 System prefix: %1",
 			onlyAdmin: "⛔ Only bot admin can change global prefix.",
-			confirmGlobal: "⚙️ Global prefix change requested.\n👉 React with emoji to confirm.",
-			confirmThisThread: "🛠️ Group prefix change requested.\n👉 React with emoji to confirm.",
-			successGlobal: "✅ Global prefix changed!\n🆕 New prefix: %1",
-			successThisThread: "✅ Group prefix changed!\n🆕 New prefix: %1"
+			confirmGlobal:
+`╔═══━━━✦🌍 GLOBAL PREFIX CHANGE ✦━━━═══╗
+👉 React দিয়ে confirm করুন ✅
+╚═══━━━✦⚡ WAITING FOR REACTION ⚡✦━━━═══╝`,
+
+			confirmThisThread:
+`╔═══━━━✦💬 GROUP PREFIX CHANGE ✦━━━═══╗
+👉 React দিয়ে confirm করুন ✅
+╚═══━━━✦⚡ WAITING FOR REACTION ⚡✦━━━═══╝`,
+
+			successGlobal:
+`╔═══━━━✦🔥 PREFIX UPDATED 🔥✦━━━═══╗
+🌍 GLOBAL PREFIX ➤ %1
+╚═══━━━✦👑 DONE 👑✦━━━═══╝`,
+
+			successThisThread:
+`╔═══━━━✦🔥 PREFIX UPDATED 🔥✦━━━═══╗
+💬 GROUP PREFIX ➤ %1
+╚═══━━━✦👑 DONE 👑✦━━━═══╝`
 		}
 	},
 
@@ -40,10 +56,10 @@ module.exports = {
 
 		const gif = getRandomGif();
 
-	if (args[0] == 'reset') {
-	await threadsData.set(event.threadID, null, "data.prefix");
-	return message.reply(getLang("reset", global.GoatBot.config.prefix));
-	}
+		if (args[0] == 'reset') {
+			await threadsData.set(event.threadID, null, "data.prefix");
+			return message.reply(getLang("reset", global.GoatBot.config.prefix));
+		}
 
 		const newPrefix = args[0];
 		const setGlobal = args[1] === "-g";
@@ -71,7 +87,6 @@ module.exports = {
 	},
 
 	onReaction: async function ({ event, message, threadsData, Reaction, getLang }) {
-		
 		if (event.userID !== Reaction.author) return;
 
 		global.GoatBot.onReaction.delete(event.messageID);
@@ -112,19 +127,38 @@ module.exports = {
 		const time = moment().tz("Asia/Dhaka").format("hh:mm A");
 		const date = moment().tz("Asia/Dhaka").format("DD MMM YYYY");
 
-		const owner = global.GoatBot.config.adminName || "亗🅼🅰ᥫᩣ🅼ᥫᩣ🆄🅽×͜×";
+		const owner = "Uday Hasan Siyam";
+		const location = "Kishoreganj, Bangladesh";
 
 		return message.reply({
-			body:
-`╭━━━〔 ♡┋ 𝙋𝙊𝙊𝙆𝙄𝙀 ᭡PREFIX 〕━━━╮
-┃ 🏷️ Group : ${groupName}
-┃ 🔰 System : 『 ${systemPrefix} 』
-┃ 💬 Group  : 『 ${groupPrefix} 』
-┃ ⏰ Time   : ${time}
-┃ 📅 Date   : ${date}
-┃ 👑 Owner  : ${owner}
-┃ ⚡ Status : ONLINE
-╰━━━〔 ✨ 亗🅼🅰ᥫᩣ🅼ᥫᩣ🆄🅽×͜× 〕━━━╯`,
+body:
+`╔═══━━━✦🔥 𝐏𝐑𝐄𝐅𝐈𝐗 𝐏𝐀𝐍𝐄𝐋 🔥✦━━━═══╗
+
+👑 ╭─❖ 𝐆𝐑𝐎𝐔𝐏 ❖─╮
+   ╰➤ 『${groupName}』
+
+⚙️ ╭─❖ 𝐒𝐘𝐒𝐓𝐄𝐌 ❖─╮
+   ╰➤ 『${systemPrefix}』
+
+💬 ╭─❖ 𝐆𝐑𝐎𝐔𝐏 𝐏𝐑𝐄𝐅𝐈𝐗 ❖─╮
+   ╰➤ 『${groupPrefix}』
+
+⏰ ╭─❖ 𝐓𝐈𝐌𝐄 ❖─╮
+   ╰➤ 『${time}』
+
+📅 ╭─❖ 𝐃𝐀𝐓𝐄 ❖─╮
+   ╰➤ 『${date}』
+
+👑 ╭─❖ 𝐎𝐖𝐍𝐄𝐑 ❖─╮
+   ╰➤ 『𝑼𝑫𝑨𝒀 𝑯𝑨𝑺𝑨𝑵 𝑺𝑰𝒀𝑨𝑴』
+
+📍 ╭─❖ 𝐋𝐎𝐂𝐀𝐓𝐈𝐎𝐍 ❖─╮
+   ╰➤ 『𝑲𝑰𝑺𝑯𝑶𝑹𝑬𝑮𝑨𝑵𝑱 • 𝑩𝑨𝑵𝑮𝑳𝑨𝑫𝑬𝑺𝑯』
+
+⚡ ╭─❖ 𝐒𝐓𝐀𝐓𝐔𝐒 ❖─╮
+   ╰➤ 『🟢 𝐎𝐍𝐋𝐈𝐍𝐄』
+
+╚═══━━━✦👑 𝐕𝐈𝐏 𝐁𝐎𝐓 👑✦━━━═══╝`,
 			attachment: await getStreamFromURL(gif)
 		});
 	}
