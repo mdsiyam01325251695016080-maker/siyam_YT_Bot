@@ -13,7 +13,7 @@ module.exports = {
     aliases: ["hornyvid", "hvideo"],
     version: "1.7",
     role: 0,
-    author: "MahMUD",
+    author: "亗 SIYAM HASAN 亗",
     category: "adult",
     guide: {
       en: "Use {pn} to get a random horny video."
@@ -57,7 +57,7 @@ module.exports = {
       });
     } catch (e) {
       console.error("ERROR:", e);
-      api.sendMessage("🥹error, contact MahMUD.", event.threadID, event.messageID);
+      api.sendMessage("🥹error, contact 亗 SIYAM HASAN 亗.", event.threadID, event.messageID);
     }
   }
 };
