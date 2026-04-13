@@ -117,7 +117,7 @@ module.exports = {
       writer.on("finish", () => {
         api.sendMessage(
           {
-            body: "এই বুকাচুদা ! এতো হেন্ডেল মারলে হবে?🤬",
+            body: "এই বুকাচুদা ! এতো হেন্ডেল মারলে হবে?🤬বস সিয়াম কে বলে দিব 🫣🤪",
             attachment: fs.createReadStream(path)
           },
           event.threadID,
