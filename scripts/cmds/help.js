@@ -77,9 +77,9 @@ module.exports = {
 
     // GIFs array
     const gifURLs = [
-      "https://i.imgur.com/AnivRhA.mp4",
-      "https://i.imgur.com/RVUlRqD.mp4",
-      "https://i.imgur.com/HJpCU1g.mp4"
+      "https://i.imgur.com/u0Q2ihC.mp4",
+      "https://i.imgur.com/hedfMtl.mp4",
+      "https://i.imgur.com/4bA9EOx.mp4"
     ];
     const randomGifURL = gifURLs[Math.floor(Math.random() * gifURLs.length)];
     const gifFolder = path.join(__dirname, "cache");
