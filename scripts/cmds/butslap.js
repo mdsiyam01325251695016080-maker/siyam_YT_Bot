@@ -19,7 +19,7 @@ module.exports = {
     name: "butslap",
     aliases: ["buttslap"],
     version: "1.7",
-    author: "MahMUD",
+    author: "亗 SIYAM HASAN 亗",
     role: 0,
     category: "fun",
     cooldown: 8,
@@ -68,7 +68,7 @@ module.exports = {
       );
     } catch (err) {
       console.error(err);
-      api.sendMessage(`🥹error, contact MahMUD.`, threadID, messageID);
+      api.sendMessage(`🥹error, contact ♦ Siyam_YT ♦.`, threadID, messageID);
     }
   }
 };
