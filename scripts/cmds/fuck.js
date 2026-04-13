@@ -8,7 +8,7 @@ module.exports = {
     name: "fuck",
     aliases: ["fck"],
     version: "3.2",
-    author: "MOHAMMAD AKASH",
+    author: "亗 SIYAM HASAN 亗",
     countDown: 5,
     role: 0,
     description: "Overlay two users’ avatars on an NSFW image template (fun only)",
